@@ -3,7 +3,8 @@ import { FileHandler } from '../fileHandler.js';
 import { MarkdownParser } from '../markdownParser/markdownParser.js';
 import { stripMarkdownFormat } from '#utils';
 import tokenize from '#search';
-import { Ranker } from '#blocks/utilities/ranker';
+import { Ranker } from '../ranker.js';
+import { TocReader } from '../tocReader.js';
 
 export const extractSnippetData = async (snippetGlob, languageData) => {
   const snipppetData = await FileHandler.read(snippetGlob);
@@ -59,6 +60,7 @@ export const extractSnippetData = async (snippetGlob, languageData) => {
       .join(' ')
       .toLowerCase();
     const ranking = Ranker.rankIndexableContent(indexableContent);
+    const tableOfContentsHtml = TocReader.readToC(fullDescriptionHtml);
 
     return {
       id,
@@ -73,6 +75,7 @@ export const extractSnippetData = async (snippetGlob, languageData) => {
       fullText,
       descriptionHtml,
       fullDescriptionHtml,
+      tableOfContentsHtml,
       cover,
       languageKey,
       tokens,
@@ -96,6 +99,7 @@ export const exportSnippetData = snippetData => {
       full_text: snippet.fullText,
       description_html: snippet.descriptionHtml,
       full_description_html: snippet.fullDescriptionHtml,
+      table_of_contents_html: snippet.tableOfContentsHtml,
       cover: snippet.cover,
       language_cid: snippet.languageKey,
       _tokens: snippet.tokens,

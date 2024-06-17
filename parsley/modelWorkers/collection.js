@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { FileHandler } from '../fileHandler.js';
 import tokenize from '#search';
-import { Ranker } from '#blocks/utilities/ranker';
+import { Ranker } from '../ranker.js';
 
 export const extractCollectionData = async (collectionGlob, hub) => {
   const { featuredListings } = hub;
