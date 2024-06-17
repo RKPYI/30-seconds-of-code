@@ -60,7 +60,7 @@ export const extractSnippetData = async (snippetGlob, languageData) => {
       .join(' ')
       .toLowerCase();
     const ranking = Ranker.rankIndexableContent(indexableContent);
-    const tableOfContentsHtml = TocReader.readToC(fullDescriptionHtml);
+    const tableOfContentsHtml = TocReader.readToC(fullDescriptionHtml) || '';
 
     return {
       id,
