@@ -25,7 +25,7 @@ Creates a horizontally scrollable image gallery.
     <div class="thumb"></div>
   </div>
   <div class="slides">
-    <div><img src="https://picsum.photos/id/1067/540/720"></div>
+    <div><img src="https://static.wikia.nocookie.net/mushokutensei/images/6/68/LN_Vol_1_JP.jpg/revision/latest/scale-to-width-down/1000?cb=20190329164806"></div>
     <div><img src="https://picsum.photos/id/122/540/720"></div>
     <div><img src="https://picsum.photos/id/188/540/720"></div>
     <div><img src="https://picsum.photos/id/249/540/720"></div>
